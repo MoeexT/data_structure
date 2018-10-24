@@ -9,40 +9,70 @@
 
 // 线性表
 #define ElemType char  // 设定表中元素的类型
-
-
-// 顺序表 sequence_table.cpp
 #define MAXSIZE 100
 #define OK 1
 #define ERROR 0
+#define TRUE 1
+#define FALSE 0
 
+
+// 顺序表 sequence_table.cpp
 typedef struct {
-    int elem[MAXSIZE];
+    ElemType elem[MAXSIZE];
     int last;
 } SeqList;
 
-int locate(SeqList L, ElemType e);
-int ins_list(SeqList *L, int i, ElemType e);
-int del_list(SeqList *L, int i, ElemType *e);
-void merge_list(SeqList *LA, SeqList *LB, SeqList *LC);
+int Locate(SeqList L, ElemType e);
+
+int InsList(SeqList *L, int i, ElemType e);
+
+int DelList(SeqList *L, int i, ElemType *e);
+
+void MergeList(SeqList *LA, SeqList *LB, SeqList *LC);
 
 
 // 单链表 link_list.cpp
-typedef struct Node
-{
+typedef struct Node {
     ElemType data;
     struct Node *next;
-}Node, *LinkList;
+} Node, *LinkList;
 
-void init_list(LinkList *L);
-void create_from_head(LinkList L);
-void create_from_tail(LinkList L);
-Node *get(LinkList L, int i);
-Node *locate(LinkList L, ElemType key);
-int list_length(LinkList L);
-void ins_list(LinkList L, int i, ElemType e);
-void del_list(LinkList L, int i, ElemType e);
-LinkList merge_link_list(LinkList LA, LinkList LB);
+void InitList(LinkList *L);
+
+void CreateFromHead(LinkList L);
+
+void CreateFromTail(LinkList L);
+
+Node *Get(LinkList L, int i);
+
+Node *Locate(LinkList L, ElemType key);
+
+int ListLength(LinkList L);
+
+int InsList(LinkList L, int i, ElemType e);
+
+int DelList(LinkList L, int i, ElemType *e);
+
+LinkList MergeLinkList(LinkList LA, LinkList LB);
 
 
+// 循环链表 circular_linked_list.cpp
+void InitCLinkList(LinkList *CL);
+
+void CreateClinkList(LinkList CL);
+
+LinkList merge_1(LinkList LA, LinkList LB);
+
+LinkList merge_2(LinkList RA, LinkList RB);
+
+
+// 双向链表 doubly_linked_list.cpp
+typedef struct DNode {
+    ElemType data;
+    struct DNode *prior, *next;
+}DNode, *DoubleList;
+
+int DLinkIns(DoubleList L, int i, ElemType e);
+
+int DLinkDel(DoubleList L, int i, ElemType *e);
 

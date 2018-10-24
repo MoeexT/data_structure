@@ -6,7 +6,7 @@
 #include <iostream>
 #include "../linear_table.h"
 
-int locate(SeqList L, ElemType e)
+int Locate(SeqList L, ElemType e)
 // 顺序表的查找
 {
     int i = 0;
@@ -18,7 +18,7 @@ int locate(SeqList L, ElemType e)
         return -1;
 }
 
-int ins_list(SeqList *L, int i, ElemType e)
+int InsList(SeqList *L, int i, ElemType e)
 // 顺序表的插入
 {
     int k;
@@ -37,7 +37,7 @@ int ins_list(SeqList *L, int i, ElemType e)
     return OK;
 }
 
-int del_list(SeqList *L, int i, ElemType *e)
+int DelList(SeqList *L, int i, ElemType *e)
 // 删除元素
 {
     int k;
@@ -53,7 +53,7 @@ int del_list(SeqList *L, int i, ElemType *e)
     return OK;
 }
 
-void merge_list(SeqList *LA, SeqList *LB, SeqList *LC)
+void MergeList(SeqList *LA, SeqList *LB, SeqList *LC)
 // 合并线性表
 {
     int i, j, k, l;
