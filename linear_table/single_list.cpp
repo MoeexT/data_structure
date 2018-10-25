@@ -67,7 +67,7 @@ Node *Get(LinkList L, int i) {
     else return nullptr;
 }
 
-Node *Locate(LinkList L, ElemType key) {
+Node *Locate(LinkList L, ELEMENT_TYPE key) {
 // 在单链表L中查找第一个值为key的节点并返回该节点的位置p，反之返回null
     Node *p;
     p = L->next;
@@ -87,7 +87,7 @@ int ListLength(LinkList L) {
     return j;
 }
 
-int InsList(LinkList L, int i, ElemType e) {
+int InsList(LinkList L, int i, ELEMENT_TYPE e) {
 // 插入结点
     Node *pre, *s;
     int k;
@@ -110,7 +110,7 @@ int InsList(LinkList L, int i, ElemType e) {
     return OK;
 }
 
-int DelList(LinkList L, int i, ElemType *e) {
+int DelList(LinkList L, int i, ELEMENT_TYPE *e) {
 // 删除节点
     Node *pre, *r;
     int k;

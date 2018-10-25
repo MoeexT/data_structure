@@ -9,7 +9,7 @@
 using namespace std;
 
 
-int DLinkIns(DoubleList L, int i, ElemType e){
+int DLinkIns(DoubleList L, int i, ELEMENT_TYPE e){
     // 双向链表的插入操作
     DNode *s, *p;
     int k = 0;
@@ -36,7 +36,7 @@ int DLinkIns(DoubleList L, int i, ElemType e){
         return FALSE;
 }
 
-int DLinkDel(DoubleList L, int i, ElemType *e){
+int DLinkDel(DoubleList L, int i, ELEMENT_TYPE *e){
     // 双向链表的删除操作
     DNode *p;
     int k = 0;
