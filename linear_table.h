@@ -5,8 +5,6 @@
 #ifndef DATA_STRUCTURE_LINEAR_TABLE_H
 #define DATA_STRUCTURE_LINEAR_TABLE_H
 
-#endif //DATA_STRUCTURE_LINEAR_TABLE_H
-
 // 线性表
 #define ELEMENT_TYPE char  // 设定表中元素的类型
 #define MAXSIZE 100
@@ -75,4 +73,7 @@ typedef struct DNode {
 int DLinkIns(DoubleList L, int i, ELEMENT_TYPE e);
 
 int DLinkDel(DoubleList L, int i, ELEMENT_TYPE *e);
+
+#endif //DATA_STRUCTURE_LINEAR_TABLE_H
+
 

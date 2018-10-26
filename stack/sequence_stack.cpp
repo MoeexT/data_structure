@@ -41,3 +41,6 @@ int GetTop(SeqStack *S, STACK_ELEMENT_TYPE *x) {
     }
 }
 
+int IsEmpty(SeqStack *S) {
+    return S->top == -1;
+}

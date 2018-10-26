@@ -5,8 +5,6 @@
 #ifndef DATA_STRUCTURE_QUEUE_H
 #define DATA_STRUCTURE_QUEUE_H
 
-#endif //DATA_STRUCTURE_QUEUE_H
-
 #define QUEUE_ELEMENT_TYPE int
 #define TRUE 1
 #define FALSE 0
@@ -44,3 +42,6 @@ void InitCircularQueue(SeqQueue *Q);
 int EnterCircularQueue(SeqQueue *Q, QUEUE_ELEMENT_TYPE x);
 
 int DeleteCircularQueue(SeqQueue *Q, QUEUE_ELEMENT_TYPE *x);
+
+#endif //DATA_STRUCTURE_QUEUE_H
+

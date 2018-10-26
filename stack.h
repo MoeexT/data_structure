@@ -5,9 +5,6 @@
 #ifndef DATA_STRUCTURE_STACK_H
 #define DATA_STRUCTURE_STACK_H
 
-#endif //DATA_STRUCTURE_STACK_H
-
-
 // 栈
 #define STACK_SIZE 50
 #define DSTACK_SIZE 100
@@ -17,7 +14,7 @@
 
 
 // 顺序栈 sequence_stack.cpp
- typedef struct {
+typedef struct {
     STACK_ELEMENT_TYPE elem[STACK_SIZE];
     int top;
 }SeqStack;
@@ -29,6 +26,8 @@ int Push(SeqStack *S, STACK_ELEMENT_TYPE x);
 int Pop(SeqStack *S, STACK_ELEMENT_TYPE *x);
 
 int GetTop(SeqStack *S, STACK_ELEMENT_TYPE *x);
+
+int IsEmpty(SeqStack *S);
 
 
 // 双端栈 double_end_stack.cpp
@@ -59,4 +58,7 @@ int PushLinkStack(LinkStack * &LS, STACK_ELEMENT_TYPE x);
 int PopLinkStack(LinkStack * &LS, STACK_ELEMENT_TYPE *x);
 
 int GetTopLinkStack(LinkStack * &LS, STACK_ELEMENT_TYPE *x);
+
+#endif //DATA_STRUCTURE_STACK_H
+
 
