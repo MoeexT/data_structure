@@ -8,6 +8,8 @@
 #endif //DATA_STRUCTURE_QUEUE_H
 
 #define QUEUE_ELEMENT_TYPE int
+#define TRUE 1
+#define FALSE 0
 
 
 // 链队列 link_queue.cpp
