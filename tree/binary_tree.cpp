@@ -31,13 +31,13 @@ void InOrder(BTree root) {
 void NonRecursiveInOrder(BTree root) {
     // 非递归中序遍历（直接实现栈操作）
     int top = 0;
-    static int M = 50;
-    BTree s[M];
+    static int L = 50;
+    BTree s[L];
     BTree bTree = root;
 
     do {
         while (bTree != nullptr) {
-            if (top > M)
+            if (top > L)
                 return;
             top ++;
             s[top] = bTree;
@@ -60,3 +60,80 @@ void PostOrder(BTree root) {
         cout << root->data << endl;
     }
 }
+
+BTNode *pre;
+
+void Inthread(BTree root) {
+    // 建立中序线索树
+    if (root != nullptr) {
+        Inthread(root->LChild);
+        if (root->LChild == nullptr) {
+            root->Ltag = 1;
+            root->LChild = pre;
+        }
+        if (pre != nullptr && pre->RChild == nullptr) {
+            pre->RChild = root;
+            pre->Rtag = 1;
+        }
+        pre = root;
+        Inthread(root->RChild);
+    }
+}
+
+BTNode *InPre(BTNode *p) {
+    // 在中序线索树中找结点前驱
+    BTNode *q;
+    if (p->Ltag == 1)
+        pre = pre->LChild;
+    else {
+        for (q = p->LChild; q->Rtag == 0; q = q->RChild) {
+            pre = q;
+        }
+        return pre;
+    }
+}
+
+BTNode *InNext(BTNode *p) {
+    // 在中序线索树中找节点后继
+    BTNode *Next, *q;
+    if (p->Rtag == 1)
+        Next = p->RChild;
+    else {
+        for (q = p->RChild; q->Ltag == 0; q = q->LChild);
+        Next = q;
+    }
+    return Next;
+}
+
+BTNode *InFirst(BTree bt) {
+    // 在中序线索树上找中序遍历的第一个节点
+    BTNode *p = bt;
+    if (!p)
+        return nullptr;
+    while (p->Ltag == 0)
+        p = p->LChild;
+    return p;
+}
+
+void TInOrder(BTree bt) {
+    // 遍历中序二叉线索树
+    BTNode *p;
+    p = InFirst(bt);
+    while (p) {
+        cout << p->data << endl;
+        p = InNext(p);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

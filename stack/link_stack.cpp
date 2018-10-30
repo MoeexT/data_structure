@@ -50,3 +50,21 @@ int GetTopLinkStack(LinkStack * &LS, STACK_ELEMENT_TYPE *x) {
     *x = node->next->data;
     return TRUE;
 }
+
+int main_() {
+    int x = 0, *p = &x;
+    LinkStack *LS;
+    InitLinkStack(LS);
+    for (int i = 0; i < 6; ++i) {
+        PushLinkStack(LS, i);
+    }
+
+    GetTopLinkStack(LS, p);
+    cout << "top value of stack: " << *p << ", address: " << p << endl;
+
+    for (int j = 0; j < 6; ++j) {
+        PopLinkStack(LS, p);
+        cout << "pop value: " << *p << endl;
+    }
+    return 0;
+}

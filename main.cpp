@@ -4,26 +4,14 @@
 */
 
 #include <iostream>
-#include "linear_table.h"
-#include "stack.h"
+#include "tree.h"
 
 using namespace std;
 
 
 int main() {
-    int x = 0, *p = &x;
-    LinkStack *LS;
-    InitLinkStack(LS);
-    for (int i = 0; i < 6; ++i) {
-        PushLinkStack(LS, i);
-    }
-
-    GetTopLinkStack(LS, p);
-    cout << "top value of stack: " << *p << ", address: " << p << endl;
-
-    for (int j = 0; j < 6; ++j) {
-        PopLinkStack(LS, p);
-        cout << "pop value: " << *p << endl;
-    }
+    int arr[10] = {15, 2, 35, 54, 12, 25, 35, 45, 18, 91};
+    HuffmanTree tree;
+    CreateHuffmanTree(tree, arr, 10);
     return 0;
 }
